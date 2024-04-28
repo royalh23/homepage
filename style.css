@@ -8,7 +8,69 @@ html {
   box-sizing: inherit;
 }
 
-body {
+body,
+p,
+h1,
+h2 {
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-size: 1.3rem;
+}
+
+header,
+main,
+footer {
+  padding: 40px 60px 60px 60px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-pic img {
+  max-width: 400px;
+  height: auto;
+}
+
+.header-pic {
+  position: relative;
+}
+
+.header-pic h1 {
+  font-size: 3.3rem;
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+  color: white;
+  text-align: center;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 580px;
+  min-height: 350px;
+  box-shadow: 3px 3px 5px rgb(162, 162, 162);
+  padding: 25px;
+}
+
+.icons {
+  display: flex;
+  justify-content: end;
+  gap: 12px;
+}
+
+.icons img {
+  display: block;
+}
+
+img[src$="svg"] {
+  width: 23px;
+  height: 23px;
 }
