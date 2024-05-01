@@ -18,14 +18,13 @@ h3 {
 }
 
 body {
-  display: flex;
-  justify-content: center;
   font-size: 1.3rem;
 }
 
 .container {
   flex: 1;
   max-width: 2000px;
+  margin: auto;
 }
 
 header,
@@ -38,37 +37,46 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(170deg, #0891b2, #0891b2 60%, white 60%, white);
 }
 
 .header-pic img {
-  max-width: 400px;
+  width: 100%;
   height: auto;
 }
 
 .header-pic {
   position: relative;
+  max-width: 400px;
 }
 
 .header-pic h1 {
+  position: absolute;
   font-size: 3.3rem;
   width: 100%;
-  position: absolute;
   bottom: 5px;
   color: white;
   text-align: center;
 }
 
 .header-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   max-width: 580px;
   min-height: 350px;
   padding: 25px;
+  background-color: white;
+}
+
+.header-text h2 {
+  margin: 30px 0;
+}
+
+.header-text p {
+  margin: 20px 0;
 }
 
 .header-text .icons {
   justify-content: end;
+  margin-top: 40px;
 }
 
 .icons {
@@ -131,6 +139,7 @@ main h2 {
 .ss-title {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   margin-bottom: 14px;
 }
 
@@ -144,8 +153,9 @@ header p,
 }
 
 footer {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 20px;
   background-color: #0891b2;
   color: white;
 }
@@ -178,6 +188,117 @@ footer .icons img {
 }
 
 .contact-img img {
-  max-width: 670px;
+  max-width: 100%;
   height: auto;
+}
+
+@media (max-width: 1200px) {
+  header {
+    position: relative;
+    padding-top: 80px;
+  }
+
+  .header-pic {
+    position: absolute;
+    top: 30px;
+    left: calc(30% - 150px);
+    max-width: 300px;
+  }
+
+  .header-pic h1 {
+    font-size: 2.3rem;
+    top: 5px;
+    left: 170px;
+    max-width: 400px;
+  }
+
+  .header-text {
+    min-height: 450px;
+  }
+
+  .placeholder {
+    width: 250px;
+    height: 250px;
+    float: left;
+  }
+
+  footer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 870px) {
+  header {
+    position: static;
+  }
+
+  header {
+    flex-direction: column;
+    padding-top: 40px;
+  }
+
+  .header-pic {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .header-pic h1 {
+    width: 100%;
+    left: 0;
+    top: 85%;
+  }
+
+  header h2 {
+    text-align: center;
+  }
+
+  .header-text .icons {
+    justify-content: center;
+  }
+
+  .placeholder {
+    display: none;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 0;
+  }
+
+  footer .icons {
+    justify-content: center;
+  }
+
+  footer .contact-img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-pic h1 {
+    top: 88%;
+  }
+
+  .projects {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+  .ss {
+    font-size: 1.8rem;
+  }
+
+  .header-text,
+  .ss + div,
+  footer {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .header-pic h1 {
+    font-size: 1.5rem;
+  }
 }
